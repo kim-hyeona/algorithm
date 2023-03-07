@@ -78,3 +78,186 @@ print((3 > 0) | (3 > 5)) #True
 
 print( 5 > 4 > 3 ) #True
 print( 5 > 4 > 7 ) #False
+
+print(2 + 2 * 4)
+print((2 + 3) * 4)
+
+number = 2 + 3 * 4 #14
+print(number)
+
+number = number + 2 #16
+print(number)
+
+number += 2
+print(number) #18
+
+number *= 2
+print(number) #36
+
+number /= 2
+print(number) #18
+
+number -= 2
+print(number) #16
+
+
+print('---------------------------숫자열 함수------------------------');
+
+print(abs(-5)) #5
+print(pow(4,2)) # 4의 2승 16
+print(max(2,3,4)) #4
+print(min(3,8,1,5)) #1
+
+print(round(3.14)) #반올림 3
+print(round(4.14)) #반올림 4
+
+
+from math import *
+print(floor(4.99)) #내림 4
+print(ceil(3.14)) #올림 4
+print(sqrt(16)) #제곱근 4
+
+from random import *
+
+print(random()) # 0.0 ~ 1.0 미만의 임의 값 생성
+print(random() * 10) # 0 ~ 10.0 미만의 임의의 값 생성
+print(int(random() * 10)) # 0 ~ 10 "미만"의 임의의 값 생성
+print(int(random() * 10) + 1 ) #1 ~ 10"이하"의 임의의 값 생성
+
+
+print(randrange(1,46)) # 1 ~ 46 미만의 임의 값 생성
+
+print(randint(1,45)) # 1 ~ 45 이하의 임의의 값 생성
+
+
+
+print('---------------------------퀴즈------------------------');
+
+from random import *
+
+date = randint(4, 28)
+
+print("오프라인 스터디 모임은 매월 " + str(date) + "일로 선정되었습닌다")
+
+
+print('--------------------------문자열------------------------');
+
+sentence = '나는 소년입니다'
+print(sentence)
+
+sentence2 = '파이썬 뚝딱이입니다'
+print(sentence2)
+
+sentence3 = """ 
+나는 소년이고,
+파이썬 뚝딱입니다
+"""
+print(sentence3)
+
+
+
+print('--------------------------슬라이싱------------------------');
+
+jumin = '990120-1234567'
+
+print('성별 : '+ jumin[7]) #인덱스 7번째 위치 출력 성별 : 1
+print('연 : ' + jumin[0:2]) #인덱스 번호 0번째부터 2번째까지 출력 연 : 99
+print('월 : ' + jumin[2:4])
+print('일 : ' + jumin[4:6])
+
+print('생년월일: ' + jumin[:6]) #콜론으로 시작하면 처음부터 인덱스 번호 6까지 가져옴
+print('뒤 7자리: ' + jumin[7:]) #콜론으로 끝나면 인덱스 번호 끝까지 가져옴
+print('뒤 7자리 (뒤에부터) : ' + jumin[-7:]) #맨뒤에서 7번째부터 끝까지
+
+
+
+print('--------------------------문자열 처리 함수------------------------');
+
+python = "python is Amazing"
+
+print(python.lower()) #문자열 소문자로 출력 값: python is amazing
+print(python.upper()) #문자열 대문자로 출력 값: PYTHON IS AMAZING
+print(python[0].isupper()) #인덱스 번호 0번의 값이 대문자인자 확인함 False
+
+print(len(python)) #문자 수 출력 17
+
+print(python.replace('python','java')) #replace('문장안에 있던 기존 값','기존 값 위치에 새롭게 넣는 값'))
+#값: java is Amazing
+
+index = python.index('n') #n의 인덱스 번호 출력
+print(index) #5
+index = python.index('n', index + 1)
+print(index) #"python is Amazing" 문장에서 두번째 n을 찾음
+
+print(python.find('n')) #인덱스 번호 출력
+print(python.find('java')) #없는 데이터이므로 -1 출력
+
+print(python.count('n')) # n이라는 문자가 얼만큼 나오는지 출력 값: 2
+
+
+
+print('--------------------------문자열 포맷------------------------');
+
+#방법 1
+
+print('나는 %d살입니다' % 20) # %뒤에 있는 20을 앞에 있는 %뒤에 d위치에 넣겠다는 뜻 d는 정수를 의미
+print('나는 %s을 좋아해요' % "파이썬") # s는 string 값 문자열을 의미
+print('apple은 %c로 시작해요.' %"a" ) #c는 하나의 문자를 의미
+
+print('나는 %s색과 %s색을 좋아해요.' % ("파란","빨간")) #괄호안에 넣어서 하나 이상의 값 넣기
+
+
+
+#방법 2
+
+print("나는 {}살입니다." .format(20)) #format을 사용해서 중괄호 안에 20을 넣음
+print('나는 {}색과 {}색을 좋아해요'.format('파란','빨간')) #괄호안에 하나 이상의 값을 넣어서 출력하기
+print('나는 {1}색과 {0}색을 좋아해요.'.format('파란','빨간')) #인덱스번호를 중괄호 안에 넣어서 값 설정하기
+
+
+#방법 3
+
+print('나는 {age}살이며, {color}색을 좋아해요.'.format(age = 2 , color = "빨간")) #중괄호 안에서 변수선언
+
+
+#방법 4
+age = 20
+color = "빨간"
+
+print(f"나는 {age}살이며, {color}색을 좋아해요.") # 밖에서 변수를 선언하는 방식
+
+
+
+print('------------------------탈출문자--------------------------');
+
+print('백문이 불여일견 \n 백견이 불여일타') # \n 줄바꿈
+
+print('사실 저는 "프론트엔드 개발자"입니다') #큰따옴표 출력하는 법
+print('사실 저는 \'프론트엔드 개발자\'입니다') #작은따옴표 출력하는 법
+
+
+# \\ : 문장 내에서 \ 출력하기
+print(" c:\\Users\\coding\\Desktop> ") 
+
+# \r : 커서를 맨 앞으로 이동
+print('Red Apple \r pine') #값 pineApple
+
+# \b : 백스페이스 (한 글자 삭제)
+print('redd\b Apple') #값 red Apple
+
+#\t : 탭
+print('red\tApple') #값 red     Apple
+
+
+
+print('-----------------------퀴즈-------------------------');
+
+site = "http://naver.com"
+my_str = site.replace("http://", "") #규칙1
+my_str = my_str[:my_str.index('.')] #규칙2
+
+# print(my_str)
+
+password = my_str[:3] + str(len(my_str)) + str(my_str.count('e')) + "!"
+
+print('{0}의 비밀번호는 {1} 입니다'.format(site, password))
